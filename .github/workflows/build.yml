@@ -1,0 +1,42 @@
+name: "Build Debian Live Minimal ISO"
+
+on:
+  schedule:
+  # 7AM on the 1st of every month (GitHub is GMT)
+  # https://crontab.guru/#0_7_1_*_*
+    - cron: "0 7 1 * *"
+
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+
+  workflow_dispatch:
+
+jobs:
+  build-release:
+    name: "Build and Release"
+    runs-on: "ubuntu-20.04"
+
+    steps:
+      - name: "Get Date"
+        run: |
+          echo "DATESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV 
+
+      - name: "Checking out git repository"
+        uses: actions/checkout@v2
+
+      - name: "Build Image"
+        run: |
+          ./build.sh
+
+      - name: "Publish"
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "${{ env.DATESTAMP }}"
+          title: "Debian Live Minimal ISO"
+          files: |
+            output/debian-live-minimal-x86_64.iso
+            output/packages.txt
