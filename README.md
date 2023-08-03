@@ -29,32 +29,9 @@ ntfs-3g - Manage `NTFS` formatted drives
 
 wimtools - Create, restore, and manage `WIM` files for Windows based systems.
 
+nmap - check network connections
 
-
-## Installed Packages
-* apt-utils
-* bash-completion
-* cifs-utils
-* curl
-* dbus
-* dosfstools
-* firmware-linux-free
-* gddrescue
-* gdisk
-* iputils-ping
-* isc-dhcp-client
-* less
-* linux-image-amd64
-* live-boot
-* nfs-common
-* ntfs-3g
-* openssh-client
-* open-vm-tools
-* procps
-* systemd-sysv
-* vim
-* wimtools
-* wget
+iperf3 - check network performance
 
 For a full list of installed packages, see `packages.txt` in the release.
 
