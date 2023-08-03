@@ -79,6 +79,8 @@ xorriso \
     -o "${HOME}/LIVE_BOOT/debian-custom.iso" \
     -full-iso9660-filenames \
     -volid "DEBIAN_CUSTOM" \
+    --mbr-force-bootable -partition_offset 16 \
+    -joliet -joliet-long -rational-rock \
     -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
     -eltorito-boot \
         isolinux/isolinux.bin \
