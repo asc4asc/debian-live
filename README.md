@@ -1,5 +1,5 @@
 # debian-live
-Builds a Debian Live x86-64 ISO monthly using GitHub Actions. Used primarily for backing up and restoring Linux and Windows based systems.
+Builds a Debian Live x86-64 ISO monthly using GitHub Actions. Used for live usb Linux on USB Stick ....
 
 
 ## Default Password
